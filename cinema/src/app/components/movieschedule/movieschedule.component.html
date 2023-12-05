@@ -1,0 +1,13 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Movies Schedule</h2>
+    <button type="menu ">sort by</button>
+    <div class="subcont d-grid">  
+        <div class="card mt-4" *ngFor="let movie of moviesD; let i = index" routerLink="/detail/{{i}}">
+          <img src="{{movie.Img}}" class="card-img-top" alt="Película 1">
+          <div class="card-body">
+            <h5 class="card-title">{{movie.Title}}</h5>
+            <p class="card-text">{{movie.ReleasedDate}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
