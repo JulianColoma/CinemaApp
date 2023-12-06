@@ -16,6 +16,7 @@ export class DetailComponent implements OnInit {
   Genre: [""],
   ReleasedDate: "",
   Img: "",
+  islist: false,
   TrailerLink: ""
   };
   constructor(

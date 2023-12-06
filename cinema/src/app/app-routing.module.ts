@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
 import { DetailComponent } from './components/detail/detail.component';
+import { MoviescheduleComponent } from './components/movieschedule/movieschedule.component';
 
 const routes: Routes = [
-  {path:'', component: HomeComponent},
+  {path:'', component: MoviescheduleComponent},
 {path:'detail/:id', component: DetailComponent}
 ];
 

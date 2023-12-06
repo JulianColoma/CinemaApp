@@ -7,6 +7,7 @@ export interface Movie {
   Genre: string[];
   ReleasedDate: string;
   Img: string; // Ruta a la imagen
+  islist: boolean;
   TrailerLink: string;
 }
 
@@ -20,6 +21,7 @@ export const moviesData: Movie[] = [
     "Genre": ["Action", "Sci-Fi"],
     "ReleasedDate": "3 September 2020",
     "Img": "../assets/resources/Tenet.png",
+    "islist": false,
     "TrailerLink": "https://www.youtube.com/watch?v=LdOM0x0XDMo"
   },
   {
@@ -30,6 +32,7 @@ export const moviesData: Movie[] = [
     "Genre": ["Action", "Animation", "Adventure"],
     "ReleasedDate": "14 December 2018",
     "Img": "../assets/resources/Spider Man.png",
+    "islist": false,
     "TrailerLink": "https://www.youtube.com/watch?v=tg52up16eq0"
   },
   {
@@ -40,6 +43,7 @@ export const moviesData: Movie[] = [
     "Genre": ["Comedy", "Crime", "Drama"],
     "ReleasedDate": "27 November 2019",
     "Img": "../assets/resources/Knives Out.png",
+    "islist": false,
     "TrailerLink": "https://www.youtube.com/watch?v=qGqiHJTsRkQ"
   },
   {
@@ -50,6 +54,7 @@ export const moviesData: Movie[] = [
     "Genre": ["Action", "Adventure", "Comedy"],
     "ReleasedDate": "1 August 2014",
     "Img": "../assets/resources/Guardians of The Galaxy.png",
+    "islist": false,
     "TrailerLink": "https://www.youtube.com/watch?v=d96cjJhvlMA"
   },
   {
@@ -60,6 +65,7 @@ export const moviesData: Movie[] = [
     "Genre": ["Action", "Adventure", "Sci-Fi"],
     "ReleasedDate": "1 May 2015",
     "Img": "../assets/resources/Avengers.png",
+    "islist": false,
     "TrailerLink": "https://www.youtube.com/watch?v=tmeOjFno6Do"
   }
 ];
