@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie, moviesData } from 'src/app/data';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movieschedule',
@@ -13,7 +13,7 @@ export class MoviescheduleComponent implements OnInit{
   watchlist: Movie[] = [];
   showList: boolean = false;
 
-  constructor(private localStorage: LocalStorageService) { }
+  constructor(private localStorage: LocalStorageService, private router: Router) { }
 
   ngOnInit(): void {
     this.moviesD = moviesData;
@@ -65,6 +65,13 @@ export class MoviescheduleComponent implements OnInit{
     } else if (selectedValue === "Title") {
       // Ordenar por título
       this.moviesD = this.moviesD != undefined? this.moviesD.sort((a, b) => a.Title.localeCompare(b.Title)): [];
+  }
+}
+detailL(mov: Movie){
+  const findMovieIndex = (movie: Movie) => movie.Title === mov.Title;
+  const index =  this.moviesD!=undefined? this.moviesD.findIndex(findMovieIndex): -1;
+  if(index  !== -1){
+    this.router.navigate([`/detail/${index}`])
   }
 }
 

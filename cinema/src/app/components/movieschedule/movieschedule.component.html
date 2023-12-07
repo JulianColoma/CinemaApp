@@ -1,26 +1,30 @@
-<div class="container">
+<div class="contG">
   <div class="row">
-      <div class="title mt-4 d-flex">
+      <div class="title  p-4 d-flex">
       <div class="col-md-8"><h1>Cinema</h1></div>  
       <div class="col-md-2 list" (click)="toggleList()"><h3><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#f7b731" class="bi bi-bookmark-star-fill" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5M8.16 4.1a.178.178 0 0 0-.32 0l-.634 1.285a.178.178 0 0 1-.134.098l-1.42.206a.178.178 0 0 0-.098.303L6.58 6.993c.042.041.061.1.051.158L6.39 8.565a.178.178 0 0 0 .258.187l1.27-.668a.178.178 0 0 1 .165 0l1.27.668a.178.178 0 0 0 .257-.187L9.368 7.15a.178.178 0 0 1 .05-.158l1.028-1.001a.178.178 0 0 0-.098-.303l-1.42-.206a.178.178 0 0 1-.134-.098z"/>
         </svg>My List</h3></div>       
       </div> 
       <div class="watchlist" *ngIf="showList">
-        <h2 (click)="toggleList()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#f7b731" class="bi bi-bookmark-star-fill" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5M8.16 4.1a.178.178 0 0 0-.32 0l-.634 1.285a.178.178 0 0 1-.134.098l-1.42.206a.178.178 0 0 0-.098.303L6.58 6.993c.042.041.061.1.051.158L6.39 8.565a.178.178 0 0 0 .258.187l1.27-.668a.178.178 0 0 1 .165 0l1.27.668a.178.178 0 0 0 .257-.187L9.368 7.15a.178.178 0 0 1 .05-.158l1.028-1.001a.178.178 0 0 0-.098-.303l-1.42-.206a.178.178 0 0 1-.134-.098z"/>
-        </svg>My List</h2>
+        <div class="headerW">
+        <svg xmlns="http://www.w3.org/2000/svg" (click)="toggleList()"width="32" height="32" fill="currentColor" class="bi bi-x-lg col-md-1" viewBox="0 0 16 16">
+          <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+        </svg>
+        <h2 class="col-md-3">My List</h2>
+      </div>
         <div *ngFor="let item of watchlist" class="watchlist-card">
-          <img src="{{ item.Img }}" alt="{{ item.Title }}" class="watchlist-card-img">
+          <img (click)="detailL(item)"src="{{ item.Img }}" alt="{{ item.Title }}" class="watchlist-card-img">
           <div class="watchlist-card-content">
             <h3>{{ item.Title }}</h3>
+            <p>{{item.Description}}</p>
             <!-- Otros detalles del elemento de la lista, si los tienes -->
           </div>
         </div>
       </div>  
   </div>
   <div class="container mt-5">
-    <h2 class="mb-4">Movies Schedule</h2>
+    <h2 class="mb-4 subtitle">Movies Schedule</h2>
     <div class="sort">
       <label for="options">Sort By</label>
       <select (click)="optionSelected(getValue($event))">
@@ -41,7 +45,7 @@
           <div class="card-body">
            <h5 class="card-title">{{movie.Title}}</h5>
             <p class="card-text">{{movie.ReleasedDate}}</p>
-            <button *ngIf="!movie.islist"(click)="addToList(movie)">Add to my list</button>
+            <button *ngIf="!movie.islist"(click)="addToList(movie)" class="addTo">Add to my list</button>
         </div>
       </div>
     </div>

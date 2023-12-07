@@ -1,0 +1,6 @@
+.cont{
+    @media (min-width: 600px) {
+    position: relative;
+    left: 80px;
+}
+}

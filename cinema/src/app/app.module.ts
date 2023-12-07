@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { MoviescheduleComponent } from './components/movieschedule/movieschedule.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { MatSelectModule } from '@angular/material/select';
-
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { MatSelectModule } from '@angular/material/select';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatSelectModule
+    MatSelectModule,
+    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
